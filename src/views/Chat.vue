@@ -1,0 +1,19 @@
+<template>
+  <div class="h-screen w-full flex flex-col justify-between">
+    <Navbar/>
+    <Footer/>
+  </div>
+</template>
+
+<script>
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+
+export default {
+  name: 'Home',
+  components: {
+    Navbar,
+    Footer
+  }
+}
+</script>
