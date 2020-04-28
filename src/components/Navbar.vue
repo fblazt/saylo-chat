@@ -7,7 +7,7 @@
       <img src="https://www.famousbirthdays.com/faces/henson-tim-image.jpg" width="45px" alt="User Profile Picture" class="rounded-full hidden lg:flex">
       <img src="https://thumbnailer.mixcloud.com/unsafe/300x300/extaudio/3/8/e/d/efbe-fc20-4fc6-a07e-21fd82a824e5" width="45px" alt="Partner Profile Picture" class="rounded-full lg:hidden">
       <p id="user-name" class="mx-3 text-2xl hidden lg:flex">Tim Henson</p>
-      <p id="partner-name" class="mx-3 text-2xl lg:hidden">Cuco</p>
+      <p id="partner-name" class="mx-3 text-xl lg:hidden">Cuco</p>
       <i class="hidden lg:flex fas fa-cog fa-lg"></i>
     </div>
   </div>
