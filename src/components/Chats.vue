@@ -1,7 +1,7 @@
 <template>
   <div class="mt-16 h-full w-full flex flex-col-reverse bg-gray-700 overflow-hidden">
     <div class="w-full h-16 px-2 py-3 flex items-center bg-gray-900">
-      <input type="text" class="h-full w-10/12 rounded-full">
+      <input type="text" class="h-full w-10/12 rounded-full outline-none">
       <button class="w-2/12 text-white"><i class="fas fa-paper-plane fa-lg"></i></button>
     </div>
     <div class="w-full px-5 overflow-y-auto flex flex-col-reverse">

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '@/views/auth/Login.vue'
+import Register from '@/views/auth/Register.vue'
 import Home from '@/views/Home.vue'
 import Chat from '@/views/Chat.vue'
 
@@ -16,6 +17,11 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
   },
   {
     path: '/chat',
