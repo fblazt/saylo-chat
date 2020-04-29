@@ -8,7 +8,7 @@
       <img src="https://thumbnailer.mixcloud.com/unsafe/300x300/extaudio/3/8/e/d/efbe-fc20-4fc6-a07e-21fd82a824e5" width="45px" alt="Partner Profile Picture" class="rounded-full lg:hidden">
       <p id="user-name" class="mx-3 text-2xl hidden lg:flex">Tim Henson</p>
       <p id="partner-name" class="mx-3 text-xl lg:hidden">Cuco</p>
-      <i class="hidden lg:flex hover:text-blue-600 pointer fas fa-cog fa-lg"></i>
+      <router-link to="/user-profile"><i class="hidden lg:flex hover:text-blue-600 fas fa-cog fa-lg"></i></router-link>
     </div>
   </div>
 </template>
