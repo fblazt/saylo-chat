@@ -1,12 +1,12 @@
 <template>
-  <div class="max-h-screen w-full flex flex-col justify-between overflow-hidden">
+  <div class="min-h-screen w-full flex flex-col justify-between">
     <Navbar/>
-    <div class="lg:flex lg:flex-row">
-      <FriendList class="w-4/12"/>
-      <Chats class="flex-4/12"/>
-      <FriendsProfile class="w-4/12"/>
-      <Footer class=""/>
+    <div class="lg:flex min-h-screen w-full flex-col justify-between lg:flex-row">
+      <FriendList :class="$store.getters.mobile.friendList ? 'hidden lg:block lg:w-4/12' : ''"/>
+      <Chats :class="$store.getters.mobile.friendList ? 'w-4/12' : 'hidden'"/>
+      <FriendsProfile class="hidden lg:block lg:w-4/12"/>
     </div>
+    <Footer/>
   </div>
 </template>
 

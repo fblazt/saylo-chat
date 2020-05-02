@@ -9,19 +9,19 @@
         </div>
       </div>
       <div class="mt-5 w-full flex flex-col">
-        <form action="" class="w-full flex flex-col justify-center items-center">
-          <input type="email" placeholder="E-mail" autofocus class="w-full h-12 px-5 rounded-full outline-none">
-          <input type="password" placeholder="Password" class="w-full h-12 px-5 mt-5 rounded-full outline-none">
+        <form action="" id="login-form" class="w-full flex flex-col justify-center items-center">
+          <input type="email" placeholder="E-mail" v-model="email" autofocus class="w-full h-12 px-5 rounded-full outline-none">
+          <input type="password" placeholder="Password" v-model="password" class="w-full h-12 px-5 mt-5 rounded-full outline-none">
           <div class="w-full flex flex-row">
-            <button class="w-1/2 h-12 mt-5 mr-1 text-white bg-blue-600 rounded-full text-2xl">Login</button>
-            <button class="w-1/2 h-12 mt-5 ml-1 text-white bg-blue-600 rounded-full text-2xl"><router-link to="/register">Register</router-link></button>
+            <button form="login-form" @click.prevent="login" class="w-1/2 h-12 mt-5 mr-1 text-white bg-blue-600 hover:bg-blue-700 rounded-full text-2xl">Login</button>
+            <button class="w-1/2 h-12 mt-5 ml-1 text-white bg-blue-600 hover:bg-blue-700 rounded-full text-2xl"><router-link to="/register">Register</router-link></button>
           </div>
         </form>
         <hr class="mt-5">
         <div class="mt-5 w-full flex flex-col items-center">
           <p class="text-white">Or Login with</p>
-          <div class="mt-5">
-            <i class="bg-blue-600 p-5 rounded-full text-white fab fa-google fa-2x"></i>
+          <div class="mt-5 cursor-pointer">
+            <i class="bg-blue-600 hover:bg-blue-700 p-5 rounded-full text-white fab fa-google fa-2x"></i>
           </div>
         </div>
       </div>
@@ -30,7 +30,28 @@
 </template>
 
 <script>
-export default {
+import firebase from 'firebase'
 
+export default {
+  name: 'Login',
+  data () {
+    return {
+      email: '',
+      password: ''
+    }
+  },
+  methods: {
+    login () {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(data => {
+          this.$router.replace({ name: 'Chat' })
+        })
+        .catch(err => {
+          this.error = err.message
+        })
+    }
+  }
 }
 </script>
