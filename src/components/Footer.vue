@@ -5,14 +5,30 @@
       <i :class="$store.getters.mobile.friendList ? 'text-blue-600' : 'text-white'" class="fas fa-comments fa-2x"></i>
     </router-link>
     <router-link to="/user-profile">
-      <img src="https://www.famousbirthdays.com/faces/henson-tim-image.jpg" width="45px" alt="User profile picture" class="rounded-full">
+      <img :src="authUser.photoURL" width="45px" alt="User profile picture" class="rounded-full">
     </router-link>
   </div>
 </template>
 
 <script>
-export default {
+import firebase from 'firebase'
 
+export default {
+  name: 'Footer',
+  data () {
+    return {
+      authUser: {}
+    }
+  },
+  created () {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.authUser = user
+      } else {
+        this.authUser = {}
+      }
+    })
+  }
 }
 </script>
 

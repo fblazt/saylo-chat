@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     user: {
       loggedIn: false,
-      data: null
+      authUser: null
     },
     mobile: {
       friendList: true,
@@ -24,6 +24,9 @@ export default new Vuex.Store({
   mutations: {
     SET_LOGGED_IN (state, value) {
       state.user.loggedIn = value
+    },
+    SET_AUTH_USER (state, data) {
+      state.user.authUser = data
     },
     SET_USER (state, data) {
       state.user.data = data
@@ -43,7 +46,6 @@ export default new Vuex.Store({
       commit('SET_LOGGED_IN', user !== null)
       if (user) {
         commit('SET_USER', {
-          displayName: user.displayName,
           email: user.email
         })
       } else {

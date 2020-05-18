@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import firebase from 'firebase'
+
 import Navbar from '@/components/Navbar'
 import FriendList from '@/components/FriendList'
 import Chats from '@/components/Chats'
@@ -25,6 +27,17 @@ export default {
     Chats,
     FriendsProfile,
     Footer
+  },
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+          next()
+        } else {
+          vm.$router.push('/login')
+        }
+      })
+    })
   }
 }
 </script>
