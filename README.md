@@ -20,6 +20,7 @@
 * [Getting Started](#getting-started)
   * [Installation](#installation)
 * [Screenshots](#screenshots)
+* [Contributing](#contributing)
 
 
 
@@ -79,3 +80,15 @@ npm run serve
       <image width="400" src='./screenshots/saylo-profile.png' />
       <image width="400" src='./screenshots/saylo-mobile.png' />
 
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+Fork the Project
+1. Create your Feature Branch  ```git checkout -b [feature]```
+2. Commit your Changes ```git commit -m 'Add some feature'```
+3. Push to the Branch ```git push origin [feature]```
+4. Open a Pull Request
+
+---
+Copyright © 2020 [Firman](https://github.com/fblazt/)
